@@ -15,16 +15,18 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
   
-  var vehiculos:[[String]] = [
-    ["coche","moto","bicicleta"],
-    ["camion","patinete","barco","monopatin"]
-  ]
+    var vehiculos:[Vehiculo] = [Vehiculo(id: 0, title: "Coche", text: "Este coche mola", image: "coche"),
+                                Vehiculo(id: 1, title: "Moto", text: "Esta moto mola", image: "moto"),
+                                Vehiculo(id: 2, title: "Patinete", text: "Este patinete mola", image: "patinete")]
+    
+    //["coche","moto","bicicleta","camion","patinete","barco","monopatin"]
   
-  var sections:[String] = ["vehículos1","vehículos2"]
+  var sections:[String] = ["vehículos1"]
   
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return vehiculos[section].count
+    
+    return vehiculos.count
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath:IndexPath){
@@ -45,9 +47,15 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             let indexPath = sender as! IndexPath
             
             
-            detailView.labelContent = vehiculos[indexPath.section][indexPath.row]
+            //detailView.labelContent = vehiculos[indexPath.section][indexPath.row]
             
             detailView.delegate = self
+            
+            let vehicle = vehiculos[indexPath.row]
+            
+            detailView.vehicleTitleContent = vehicle.title
+            detailView.vehicleDescriptionContent = vehicle.text
+            detailView.vehicleImageContent = vehicle.image
             
            
         }
@@ -57,9 +65,18 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    let cell:UITableViewCell = UITableViewCell(style:UITableViewCell.CellStyle.subtitle,reuseIdentifier: "mycell")
+   // let cell:UITableViewCell = UITableViewCell(style:UITableViewCell.CellStyle.subtitle,reuseIdentifier: "mycell")
     
-    cell.textLabel?.text = vehiculos[indexPath.section][indexPath.row]
+    //cell.textLabel?.text = vehiculos[indexPath.row]
+    
+    let cell: VehiculoTableViewCell = tableView.dequeueReusableCell(withIdentifier: "VehiculoCell", for: indexPath) as! VehiculoTableViewCell
+    
+    
+    let vehiculo: Vehiculo = vehiculos[indexPath.row]
+    
+    cell.vehiculoTitleLabel.text = vehiculo.title
+    cell.vehiculoTextLabel.text = vehiculo.text
+    cell.vehiculoImageView.image = UIImage(named: vehiculo.image)
     
 
     return cell
