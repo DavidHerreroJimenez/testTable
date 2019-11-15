@@ -4,8 +4,61 @@
 
 import UIKit
 
-class NewVehicleViewController: UIViewController {
 
+protocol NewVehicleViewControllerDelegate: NSObjectProtocol{
+    
+    func saveNewElementToList(data: Vehiculo)
+}
+class NewVehicleViewController: UIViewController {
+    
+    
+ 
+    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var labelImage: UILabel!
+    @IBOutlet weak var labelText: UILabel!
+    @IBOutlet weak var texFieldTitle: UITextField!
+    @IBOutlet weak var textFieldImage: UITextField!
+    @IBOutlet weak var textFieldText: UITextField!
+    @IBOutlet weak var btnSave: UIButton!
+    
+    weak var delegate: NewVehicleViewControllerDelegate?
+    
+    @IBAction func btnClick(_ sender: Any) {
+        
+ 
+        
+        let id:Int = Int(Date().timeIntervalSince1970)
+        
+        let title: String = texFieldTitle.text ?? "NO TITLE"
+         
+         let text: String = textFieldText.text ?? "NO TEXT"
+        
+        let image:String = "moto";
+        
+        
+        let newVehicle: Vehiculo = Vehiculo(id:id, title:title, text:text, image:image)
+        
+         
+        if let delegate = delegate {
+            
+            delegate.saveNewElementToList(data:newVehicle)
+            
+        }
+        
+        //Cierra la vista
+        self.dismiss(animated: true)
+
+        
+        
+        
+        
+        //Aqui va la funcionalidad del botón
+    }
+    
+    var titleContent: String = ""
+    var imageContent: String = ""
+    var textContent: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

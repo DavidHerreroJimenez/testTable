@@ -8,12 +8,26 @@
 
 import UIKit
 
-class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, DetailViewControllerDelegate {
+class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, DetailViewControllerDelegate, NewVehicleViewControllerDelegate {
+  
+    
+    @IBOutlet weak var vehiculosTableView: UITableView!
+    
+    
+    
+    @IBOutlet weak var buttonNewVehicle: UIBarButtonItem!
     
     func printMyNumber(data: String) {
         print("My number is at first view", data)
     }
     
+    func saveNewElementToList(data: Vehiculo) {
+        print("saveNewElementToList")
+        self.vehiculos.append(data)
+        
+        self.vehiculosTableView.reloadData()
+        
+      }
   
     var vehiculos:[Vehiculo] = [Vehiculo(id: 0, title: "Coche", text: "Este coche mola", image: "coche"),
                                 Vehiculo(id: 1, title: "Moto", text: "Esta moto mola", image: "moto"),
@@ -58,6 +72,14 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             detailView.vehicleImageContent = vehicle.image
             
            
+        }else if segue.identifier == "toAddView"{
+            
+          //Asociamos el delegado
+            
+            let addView: NewVehicleViewController = segue.destination as! NewVehicleViewController
+            
+            addView.delegate = self
+            
         }
     }
   
@@ -118,6 +140,8 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
         // Do any additional setup after loading the view.
     }
+    
+    
     
 
     /*

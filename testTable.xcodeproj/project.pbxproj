@@ -47,6 +47,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		442AA54D237EA7EE00DFB1D0 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		44B30633237D6DFE00CF7FE1 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +97,7 @@
 		44C90A96237C181C008E12E1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				442AA54D237EA7EE00DFB1D0 /* Delegates */,
 				44952F7A237D8B5500FE20DC /* NewVehicleViewController.swift */,
 				44C90A84237BFDA7008E12E1 /* ViewController.swift */,
 				44C90A94237C0299008E12E1 /* TableViewController.swift */,
