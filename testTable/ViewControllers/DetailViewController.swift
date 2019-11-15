@@ -21,7 +21,7 @@ class DetailViewController: UIViewController {
     
     var vehicleTitleContent: String = ""
     var vehicleDescriptionContent = ""
-    var vehicleImageContent: String = "" 
+    var vehicleImageContent: UIImage?
     
     
     // @IBOutlet weak var labelSecondView: UILabel!
@@ -65,7 +65,7 @@ class DetailViewController: UIViewController {
         
         vehicleTitle.text = vehicleTitleContent
         vehicleDescription.text = vehicleDescriptionContent
-        vehicleImage.image = UIImage(named: vehicleImageContent)
+        vehicleImage.image = vehicleImageContent //UIImage(named: vehicleImageContent)
 
         // Do any additional setup after loading the view.
     }

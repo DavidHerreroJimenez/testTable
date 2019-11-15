@@ -29,9 +29,9 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
       }
   
-    var vehiculos:[Vehiculo] = [Vehiculo(id: 0, title: "Coche", text: "Este coche mola", image: "coche"),
-                                Vehiculo(id: 1, title: "Moto", text: "Esta moto mola", image: "moto"),
-                                Vehiculo(id: 2, title: "Patinete", text: "Este patinete mola", image: "patinete")]
+    var vehiculos:[Vehiculo] = [Vehiculo(id: 0, title: "Coche", text: "Este coche mola", image: UIImage(named: "coche")),
+                                Vehiculo(id: 1, title: "Moto", text: "Esta moto mola", image: UIImage(named: "moto")),
+                                Vehiculo(id: 2, title: "Patinete", text: "Este patinete mola", image: UIImage(named: "patinete"))]
     
     //["coche","moto","bicicleta","camion","patinete","barco","monopatin"]
   
@@ -98,7 +98,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     cell.vehiculoTitleLabel.text = vehiculo.title
     cell.vehiculoTextLabel.text = vehiculo.text
-    cell.vehiculoImageView.image = UIImage(named: vehiculo.image)
+    cell.vehiculoImageView.image = vehiculo.image  //UIImage(named: vehiculo.image)
     
 
     return cell

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		442AA554237EBC0200DFB1D0 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442AA553237EBC0200DFB1D0 /* ImagePickerManager.swift */; };
 		448A97F6237D4CEE0021300C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448A97F5237D4CEE0021300C /* DetailViewController.swift */; };
 		44952F7B237D8B5500FE20DC /* NewVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44952F7A237D8B5500FE20DC /* NewVehicleViewController.swift */; };
 		44B30632237D6DEF00CF7FE1 /* Vehiculo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B30631237D6DEF00CF7FE1 /* Vehiculo.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		442AA553237EBC0200DFB1D0 /* ImagePickerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
 		448A97F5237D4CEE0021300C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		44952F7A237D8B5500FE20DC /* NewVehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVehicleViewController.swift; sourceTree = "<group>"; };
 		44B30631237D6DEF00CF7FE1 /* Vehiculo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehiculo.swift; sourceTree = "<group>"; };
@@ -47,11 +49,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		442AA54D237EA7EE00DFB1D0 /* Delegates */ = {
+		442AA552237EBBE500DFB1D0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				442AA553237EBC0200DFB1D0 /* ImagePickerManager.swift */,
 			);
-			path = Delegates;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		44B30633237D6DFE00CF7FE1 /* DataModel */ = {
@@ -82,6 +85,7 @@
 		44C90A7F237BFDA7008E12E1 /* testTable */ = {
 			isa = PBXGroup;
 			children = (
+				442AA552237EBBE500DFB1D0 /* Helpers */,
 				44B30633237D6DFE00CF7FE1 /* DataModel */,
 				44C90A96237C181C008E12E1 /* ViewControllers */,
 				44C90A80237BFDA7008E12E1 /* AppDelegate.swift */,
@@ -97,7 +101,6 @@
 		44C90A96237C181C008E12E1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				442AA54D237EA7EE00DFB1D0 /* Delegates */,
 				44952F7A237D8B5500FE20DC /* NewVehicleViewController.swift */,
 				44C90A84237BFDA7008E12E1 /* ViewController.swift */,
 				44C90A94237C0299008E12E1 /* TableViewController.swift */,
@@ -182,6 +185,7 @@
 				44952F7B237D8B5500FE20DC /* NewVehicleViewController.swift in Sources */,
 				44B30632237D6DEF00CF7FE1 /* Vehiculo.swift in Sources */,
 				448A97F6237D4CEE0021300C /* DetailViewController.swift in Sources */,
+				442AA554237EBC0200DFB1D0 /* ImagePickerManager.swift in Sources */,
 				44C90A83237BFDA7008E12E1 /* SceneDelegate.swift in Sources */,
 				44B30635237D700A00CF7FE1 /* VehiculoTableViewCell.swift in Sources */,
 				44C90A95237C0299008E12E1 /* TableViewController.swift in Sources */,

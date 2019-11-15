@@ -17,24 +17,31 @@ class NewVehicleViewController: UIViewController {
     @IBOutlet weak var labelImage: UILabel!
     @IBOutlet weak var labelText: UILabel!
     @IBOutlet weak var texFieldTitle: UITextField!
-    @IBOutlet weak var textFieldImage: UITextField!
     @IBOutlet weak var textFieldText: UITextField!
-    @IBOutlet weak var btnSave: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     
     weak var delegate: NewVehicleViewControllerDelegate?
     
-    @IBAction func btnClick(_ sender: Any) {
+    
+    @IBAction func chooseAnImage(_ sender: Any) {
         
- 
+        ImagePickerManager().pickImage(self){ image in
+            
+            self.imageView.image = image
+            
+        }
+        
+    }
+    
+    @IBAction func btnClick(_ sender: Any) {
         
         let id:Int = Int(Date().timeIntervalSince1970)
         
         let title: String = texFieldTitle.text ?? "NO TITLE"
          
-         let text: String = textFieldText.text ?? "NO TEXT"
+        let text: String = textFieldText.text ?? "NO TEXT"
         
-        let image:String = "moto";
-        
+        let image:UIImage = imageView.image!
         
         let newVehicle: Vehiculo = Vehiculo(id:id, title:title, text:text, image:image)
         
@@ -54,10 +61,6 @@ class NewVehicleViewController: UIViewController {
         
         //Aqui va la funcionalidad del botón
     }
-    
-    var titleContent: String = ""
-    var imageContent: String = ""
-    var textContent: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
