@@ -43,18 +43,20 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     return vehiculos.count
   }
   
+  //función delegada que salta cuando seleccionamos una row
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath:IndexPath){
     
-//    print("INDEXPATH:",indexPath.row);
-    
+    //lo mismo que hace storyboard internamente para llamar a otra vista (segue)
     self.performSegue(withIdentifier: "segueToSecondScreen", sender: indexPath)
     
   }
     
+    //cualquier segue llama a la función prepare
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "segueToSecondScreen"{
             
+            //Referencia al controlador de la vista al que voy a ir
             let detailView: DetailViewController = segue.destination as! DetailViewController
             
             

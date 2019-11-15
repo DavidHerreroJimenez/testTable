@@ -15,10 +15,12 @@ protocol DetailViewControllerDelegate: NSObjectProtocol{
 
 class DetailViewController: UIViewController {
 
+    //Estas variables  @IBOutlet se inicializan desde aquí. No se pueden setear desde el prepare de otra vista
     @IBOutlet weak var vehicleTitle: UILabel!
     @IBOutlet weak var vehicleDescription: UILabel!
     @IBOutlet weak var vehicleImage: UIImageView!
     
+    //estas variables SÍ las podemos inicializar desde otra vista, siempre desde el prepare
     var vehicleTitleContent: String = ""
     var vehicleDescriptionContent = ""
     var vehicleImageContent: UIImage?
@@ -59,15 +61,14 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
     
 //        labelSecondView.text = labelContent
-//
 //        labelNumber.text = String(arc4random_uniform(10))
         
         
+        
+        //Una vez cargada la vista, sí podemos dar valor a las variables @IBOutlet desde las var string
         vehicleTitle.text = vehicleTitleContent
         vehicleDescription.text = vehicleDescriptionContent
         vehicleImage.image = vehicleImageContent //UIImage(named: vehicleImageContent)
-
-        // Do any additional setup after loading the view.
     }
     
 
